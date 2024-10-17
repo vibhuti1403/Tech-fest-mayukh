@@ -1,0 +1,290 @@
+<!--
+  Generated template for the WorkshopPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!-- <ion-navbar>
+    <ion-title>Events</ion-title>
+  </ion-navbar> -->
+</ion-header>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+
+<ion-content padding>
+
+  
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;color:#fff !important; background-color:#050c46 !important" id="mySidebar"><br>
+  <a href="javascript:void(0)" (click)="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h2 class="w3-padding-64" style="font-weight:bold;color:white;"><b>Mayukh</b></h2>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" (click)="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    
+    <a (click)="scrollTo('reg')" class="w3-bar-item w3-button w3-hover-white">Registeration and Hospitality</a>
+    <a (click)="scrollTo('acc')" class="w3-bar-item w3-button w3-hover-white">Accounting</a>
+    <a (click)="scrollTo('web')" class="w3-bar-item w3-button w3-hover-white">Website and App</a>
+    <a (click)="scrollTo('tech')" class="w3-bar-item w3-button w3-hover-white">Technical</a>
+    <a (click)="scrollTo('cult')" class="w3-bar-item w3-button w3-hover-white">Cultural</a>
+    <a (click)="scrollTo('spon')" class="w3-bar-item w3-button w3-hover-white">Sponsorship</a>
+    <a (click)="scrollTo('cater')" class="w3-bar-item w3-button w3-hover-white">Catering</a>
+    <a (click)="scrollTo('decor')" class="w3-bar-item w3-button w3-hover-white">Decor</a>
+    <a (click)="scrollTo('cover')" class="w3-bar-item w3-button w3-hover-white">Coverage</a>
+    <a (click)="scrollTo('shop')" class="w3-bar-item w3-button w3-hover-white">Workshop</a>
+    <a (click)="scrollTo('design')" class="w3-bar-item w3-button w3-hover-white">Digital Design</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" style="color:#fff !important; background-color:#050c46 !important">
+  <a href="javascript:void(0)" class="w3-button w3-margin-right" style="color:#fff !important; background-color:#050c46 !important" (click)="w3_open()">☰</a>
+  <span>Teams</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" (click)="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="acc">
+    <h1 class="w3-jumbo" style="color:#050c46"><b>Teams</b></h1>
+     
+    <div class="w3-container" style="margin-top:80px" id="reg">
+    
+      <h1 class="w3-xxlarge" style="color:yellow;"><b>Registeration and Hospitality</b></h1>
+    
+   
+    <div class="w3-row-padding" >
+      <div class="w3-third" *ngFor="let att of register; let idx = index">
+        <ion-card >
+          <img src='{{att.memberImg}}'>
+          <ion-card-content>
+            <ion-card-title>
+                {{att.memberName}}
+            </ion-card-title>
+          </ion-card-content>
+        
+          </ion-card>
+      </div>
+    </div>
+    </div>
+
+
+    <h1 class="w3-xxlarge" style="color:yellow;"><b>Accounting</b></h1>
+ 
+  
+    <!-- Photo grid (modal) -->
+    <div class="w3-row-padding" >
+      <div class="w3-third" *ngFor="let att of account; let idx = index">
+          <ion-card >
+            <img src='{{att.memberImg}}'>
+            <ion-card-content>
+              <ion-card-title>
+                  {{att.memberName}}
+              </ion-card-title>
+            </ion-card-content>
+          
+            </ion-card>
+      </div>
+      </div>
+    </div>
+  
+    <div class="w3-container" style="margin-top:80px" id="web">
+      
+      <h1 class="w3-xxlarge" style="color:yellow;"><b>Website and App</b></h1>
+    
+      <div class="w3-row-padding" >
+        <div class="w3-third" *ngFor="let att of webapp; let idx = index">
+          <ion-card >
+            <img src='{{att.memberImg}}'>
+            <ion-card-content>
+              <ion-card-title>
+                  {{att.memberName}}
+              </ion-card-title>
+            </ion-card-content>
+          
+            </ion-card>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="w3-container" style="margin-top:80px"  id="tech">
+      <h1 class="w3-xxlarge" style="color:yellow;"><b>Technical</b></h1>
+   
+        <div class="w3-row-padding">
+          <div class="w3-third" *ngFor="let att of tech; let idx = index">
+            <ion-card >
+              <img src='{{att.memberImg}}'>
+              <ion-card-content>
+                <ion-card-title>
+                    {{att.memberName}}
+                </ion-card-title>
+              </ion-card-content>
+            
+              </ion-card>
+          </div>
+
+        </div>
+    </div>
+
+    <div class="w3-container" style="margin-top:80px"  id="cult">
+  
+      <h1 class="w3-xxlarge" style="color:yellow;"><b>Cultural</b></h1>
+   
+          <div class="w3-row-padding" >
+            <div class="w3-third" *ngFor="let att of cultural; let idx = index">
+              <ion-card >
+                <img src='{{att.memberImg}}'>
+                <ion-card-content>
+                  <ion-card-title>
+                      {{att.memberName}}
+                  </ion-card-title>
+                </ion-card-content>
+              
+                </ion-card>
+            </div>
+
+          </div>
+    </div>
+
+    <div class="w3-container" style="margin-top:80px"  id="spon">
+    
+      <h1 class="w3-xxlarge" style="color:yellow;"><b>Sponsorship</b></h1>
+   
+            <div class="w3-row-padding" >
+              <div class="w3-third" *ngFor="let att of sponsor; let idx = index">
+                <ion-card >
+                  <img src='{{att.memberImg}}'>
+                  <ion-card-content>
+                    <ion-card-title>
+                        {{att.memberName}}
+                    </ion-card-title>
+                  </ion-card-content>
+                
+                  </ion-card>
+              </div>
+          
+             </div>
+</div> 
+
+<div class="w3-container" style="margin-top:80px"  id="cater">
+    
+  <h1 class="w3-xxlarge" style="color:yellow;"><b>Catering</b></h1>
+
+        <div class="w3-row-padding" >
+          <div class="w3-third" *ngFor="let att of cater; let idx = index">
+            <ion-card >
+              <img src='{{att.memberImg}}'>
+              <ion-card-content>
+                <ion-card-title>
+                    {{att.memberName}}
+                </ion-card-title>
+              </ion-card-content>
+            
+              </ion-card>
+          </div>
+      
+         </div>
+</div> 
+
+
+<div class="w3-container" style="margin-top:80px"  id="decor">
+    
+  <h1 class="w3-xxlarge" style="color:yellow;"><b>Decor</b></h1>
+
+        <div class="w3-row-padding" >
+          <div class="w3-third" *ngFor="let att of decor; let idx = index">
+            <ion-card >
+              <img src='{{att.memberImg}}'>
+              <ion-card-content>
+                <ion-card-title>
+                    {{att.memberName}}
+                </ion-card-title>
+              </ion-card-content>
+            
+              </ion-card>
+          </div>
+      
+         </div>
+</div> 
+
+
+<div class="w3-container" style="margin-top:80px"  id="cover">
+    
+  <h1 class="w3-xxlarge" style="color:yellow;"><b>Coverage</b></h1>
+
+        <div class="w3-row-padding" >
+          <div class="w3-third" *ngFor="let att of cover; let idx = index">
+            <ion-card >
+              <img src='{{att.memberImg}}'>
+              <ion-card-content>
+                <ion-card-title>
+                    {{att.memberName}}
+                </ion-card-title>
+              </ion-card-content>
+            
+              </ion-card>
+          </div>
+      
+         </div>
+</div> 
+
+
+<div class="w3-container" style="margin-top:80px"  id="shop">
+    
+  <h1 class="w3-xxlarge" style="color:yellow;"><b>Workshop</b></h1>
+
+        <div class="w3-row-padding" >
+          <div class="w3-third" *ngFor="let att of workshop; let idx = index">
+            <ion-card >
+              <img src='{{att.memberImg}}'>
+              <ion-card-content>
+                <ion-card-title>
+                    {{att.memberName}}
+                </ion-card-title>
+              </ion-card-content>
+            
+              </ion-card>
+          </div>
+      
+         </div>
+</div> 
+<div class="w3-container" style="margin-top:80px"  id="design">
+    
+  <h1 class="w3-xxlarge" style="color:yellow;"><b>Digital Design</b></h1>
+
+        <div class="w3-row-padding" >
+          <div class="w3-third" *ngFor="let att of digital; let idx = index">
+            <ion-card >
+              <img src='{{att.memberImg}}'>
+              <ion-card-content>
+                <ion-card-title>
+                    {{att.memberName}}
+                </ion-card-title>
+              </ion-card-content>
+            
+              </ion-card>
+          </div>
+      
+         </div>
+</div> 
+
+
+</div>
+
+</ion-content>

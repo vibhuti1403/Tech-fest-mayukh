@@ -1,0 +1,65 @@
+<!--
+  Generated template for the EventDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!-- <ion-navbar>
+    <ion-title>eventDetails</ion-title>
+  </ion-navbar> -->
+
+  <!-- <ion-buttons end> -->
+
+    <ion-item no-line>
+        <button  item-end ion-button color="danger" clear style="font-weight: bold; color:#050c46 !important;" (click)="closeModal()">X</button>
+        <p text-center class="w3-xxlarge" style="font-weight: bold; color:#050c46 !important;">{{name}}</p>    
+        
+    </ion-item>
+    <ion-label text-right stacked><font size=3><i><b>{{tagline}} &nbsp;</b></i></font></ion-label>    
+    <!-- </ion-buttons> -->
+</ion-header>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<ion-content padding>  
+    <img src="{{Image}}">
+    <p style="white-space:pre-wrap" align="right"><font size=3><b>{{DateTime}}</b></font></p>
+
+    <p style="white-space:pre-wrap">{{Text}}</p> 
+
+    <p *ngIf="teamsize!=6"><b>Team size:</b> {{teamsize}}</p>
+    <p *ngIf="teamsize==6"><b>Team size:</b> Full Team</p>
+    <ion-label><b>Rules:</b></ion-label>
+    <p>**The decision of the judges will be final</p>
+    <p style="white-space:pre-wrap">{{Rules}}</p>
+
+
+    <ion-label><b>Registration</b></ion-label>
+
+    <small><b><i>Make sure to make the payment before registering</i></b></small>
+    <br>
+    <button ion-button align="center" *ngIf="teamsize==6" [disabled]="!paid" (click)="registerTeam()">Register</button>
+    
+
+    <ion-label *ngIf="!isRegistered" style="color:black">
+      Please login to register
+     </ion-label>
+    
+      <ion-label *ngIf="teamsize!=6 && teamExists==false" stacked style="color:black">
+        Select
+      </ion-label>
+      <ion-label *ngIf="teamsize!=6 && teamExists==true" stacked style="color:black">
+          Already Registered!
+        </ion-label>
+      
+
+      <ion-select [disabled]="!paid" align="center" *ngIf="teamsize!=6 && teamExists==false" [(ngModel)]="eventMem" interface="popover" placeholder="Select Members" multiple="true" (ionChange)="getvalsArr(eventMem)">
+          <ion-option *ngFor="let a of returnArr; let i=index" [value]=i>{{a.name}}</ion-option>
+      </ion-select>
+
+      
+    
+    
+</ion-content>

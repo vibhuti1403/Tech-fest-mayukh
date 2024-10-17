@@ -1,0 +1,31 @@
+<!--
+  Generated template for the AcceptMoneyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>acceptMoney</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Enter Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" pattern="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+" #uname="ngModel"></ion-input>
+        <small item-end style="color:red;font-size: 1;" *ngIf="uname.errors?.pattern">Invalid Email</small>
+            </ion-item>
+
+            <ion-item>         
+                <ion-label color="primary" stacked item-width="50">Enter Team Password</ion-label>
+                <ion-input type="password" [(ngModel)]="teamPass"></ion-input>
+                <small item-end style="color:red;font-size:1;" *ngIf="!teamPass">Required</small>
+              </ion-item>
+    
+      <br><br>
+    
+      <button ion-button align="center" (click)="paidAmt(email,teamPass)">Paid</button>
+      
+</ion-content>

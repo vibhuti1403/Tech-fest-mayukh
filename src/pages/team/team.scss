@@ -1,0 +1,30 @@
+page-team {
+
+    img{
+        height: 20vw;
+    }
+
+    @media only screen and (min-width: 800px) {
+    ion-card{
+        height:60vh;
+    }
+    }
+
+
+    @media only screen and (max-width: 500px) {
+        ion-card{
+            height:60vh;
+        }
+
+        img{
+            height: 60vw;
+        }
+        }
+
+    ion-content{
+        // background-color: #0e7caf  !important;
+
+        background-color: #4f94b4  !important;
+    }
+
+}

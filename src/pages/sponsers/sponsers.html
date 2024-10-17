@@ -1,0 +1,23 @@
+<ion-header>
+
+      
+</ion-header>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<ion-content> 
+      <div class="w3-row-padding" >
+          <div class="w3-quarter" *ngFor="let att of sponser; let idx = index">
+              <ion-card>
+                <img src='{{att.img_url}}'>
+                <ion-card-content>
+                  <ion-card-title text-center>
+                      {{att.title}}
+                  </ion-card-title>
+                </ion-card-content>
+              
+                </ion-card>
+          </div>
+        
+  </div>  
+</ion-content>

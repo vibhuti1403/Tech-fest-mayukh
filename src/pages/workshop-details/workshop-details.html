@@ -1,0 +1,34 @@
+<!--
+  Generated template for the EventDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!-- <ion-navbar>
+    <ion-title>eventDetails</ion-title>
+  </ion-navbar> -->
+
+  <!-- <ion-buttons end> -->
+
+    <ion-item no-lines>
+        <button  item-end ion-button clear style="font-weight: bold; color:#050c46 !important;" (click)="closeModal()">X</button>
+        <p text-center class="w3-xlarge" style="font-weight: bold; color:#050c46 !important">{{workshopName}}</p>    
+    </ion-item>
+   
+   
+    <!-- </ion-buttons> -->
+</ion-header>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<ion-content padding>  
+    <img src="{{workshopImg}}">
+    <ion-label text-right><font size=3><b>Time: {{workshopDuration}}</b></font></ion-label> 
+
+    <p style="white-space:pre-wrap">{{workshopContent}}</p> 
+    <br>
+    <p><b>Conducted By: </b>{{workshopMembers}}</p>
+
+</ion-content>
